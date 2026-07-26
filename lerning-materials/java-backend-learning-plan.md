@@ -64,9 +64,12 @@
 - [компиляция и запуск](week-01/compilation-and-running.md);
 - структура Java-проекта;
 - пакеты и visibility;
-- Gradle/Maven lifecycle;
+- [Gradle/Maven lifecycle](week-01/gradle-maven-lifecycle.md);
 - dependency scopes/configurations;
 - IntelliJ debugger.
+- как работает память
+Хип, стэк, стринг пул где хранится и как достается
+Как связано с оперативной памятью 
 
 Практика:
 
