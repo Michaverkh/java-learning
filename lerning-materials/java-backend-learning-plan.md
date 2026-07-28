@@ -1,6 +1,7 @@
 # Учебный план по Java Backend на 24 недели
 
-План рассчитан на опытного frontend-разработчика со стеком React + TypeScript, базой в алгоритмах и структурах данных и небольшим опытом Node.js.
+План рассчитан на опытного frontend-разработчика со стеком React + TypeScript, базой в алгоритмах и структурах данных и
+небольшим опытом Node.js.
 
 Цель — не «выучить всю Java», а через полгода уметь:
 
@@ -17,7 +18,7 @@
 
 - версия Java;
 - Spring Boot 2/3/4;
-- Maven или Gradle;
+- Maven и его версия;
 - JPA/Hibernate, Spring Data JDBC, jOOQ или чистый JDBC;
 - PostgreSQL/Oracle;
 - Kafka/RabbitMQ;
@@ -25,13 +26,21 @@
 - библиотеки тестирования;
 - формат архитектуры и модулей.
 
-Учиться следует на тех же версиях и инструментах. Для отдельного учебного проекта рекомендуется Java 21, Spring Boot, Gradle или Maven, PostgreSQL, Flyway, JUnit 5, Mockito и Testcontainers. Не нужно изучать Maven и Gradle одновременно.
+Учиться следует на тех же версиях и инструментах. Для отдельного учебного проекта используются Java 21, Spring Boot,
+**Maven**, PostgreSQL, Flyway, JUnit 5, Mockito и Testcontainers.
 
-Актуальный Spring Boot 4 требует минимум Java 17, но это не означает, что нужно переводить на него существующий проект — совместимость важнее новизны: [текущие требования Spring Boot](https://docs.spring.io/spring-boot/system-requirements.html).
+**Выбор build tool для всего учебного плана — Maven.** Учебный проект, примеры, команды и практические задания не
+дублируются для Gradle. Если рабочий backend- репозиторий команды использует Gradle, его особенности следует изучать
+отдельно в контексте этого репозитория, но одновременно поддерживать две версии учебного проекта не нужно.
+
+Актуальный Spring Boot 4 требует минимум Java 17, но это не означает, что нужно переводить на него существующий проект —
+совместимость важнее
+новизны: [текущие требования Spring Boot](https://docs.spring.io/spring-boot/system-requirements.html).
 
 ## Сквозной проект
 
-В течение полугода необходимо разработать `Wallet Service` — упрощённый сервис кошельков:
+В течение полугода необходимо разработать
+[`Wallet Service`](projects/wallet-service/technical-requirements.md) — упрощённый сервис кошельков:
 
 - клиенты и счета;
 - пополнение, списание и перевод;
@@ -62,14 +71,10 @@
 
 - [JDK, JVM, bytecode, classpath](week-01/jdk-jvm-bytecode-classpath.md);
 - [компиляция и запуск](week-01/compilation-and-running.md);
-- структура Java-проекта;
-- пакеты и visibility;
-- [Gradle/Maven lifecycle](week-01/gradle-maven-lifecycle.md);
-- dependency scopes/configurations;
-- IntelliJ debugger.
-- как работает память
-Хип, стэк, стринг пул где хранится и как достается
-Как связано с оперативной памятью 
+- [структура Java-проекта](week-01/java-project-structure.md);
+- [пакеты и visibility](week-01/packages-and-visibility.md);
+- [Maven lifecycle](week-01/gradle-maven-lifecycle.md);
+- Maven dependency scopes;
 
 Практика:
 
@@ -81,24 +86,27 @@
 Материалы:
 
 - [Официальный Java Learning Path](https://dev.java/learn/)
-- [Gradle: Building Java projects](https://docs.gradle.org/current/userguide/building_java_projects.html)
-- [Gradle: dependency management](https://docs.gradle.org/current/userguide/dependency_management_for_java_projects.html)
+- [Maven: Getting Started](https://maven.apache.org/guides/getting-started/)
+- [Maven: Introduction to the Dependency Mechanism](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html)
 - Книга *Spring Start Here*: глава 1
-- Видео: [Java Full Course — Bro Code](https://www.youtube.com/watch?v=xTtL8E4LzTQ) — выборочно, пропуская знакомые основы.
+- Видео: [Java Full Course — Bro Code](https://www.youtube.com/watch?v=xTtL8E4LzTQ) — выборочно, пропуская знакомые
+  основы.
 
 ### Неделя 2. Система типов и объектная модель
 
 Темы:
 
 - примитивы и reference types;
-- классы, интерфейсы, `abstract`, `final`, `sealed`;
-- constructors;
+- [объектная модель и ООП в Java: классы, объекты, конструкторы, инкапсуляция, наследование и полиморфизм](week-02/object-oriented-programming.md);
+- интерфейсы, `abstract`, `final`, `sealed`;
 - `record`, `enum`;
 - перегрузка и переопределение;
 - композиция против наследования;
 - `null`, `Optional`;
 - разница между Java generics и TypeScript generics;
 - type erasure.
+- как работает память Хип, стэк, стринг пул где хранится и как достается Как связано с оперативной памятью
+- IntelliJ debugger.
 
 Особое внимание:
 
@@ -120,7 +128,8 @@
 - [Objects, classes and interfaces](https://dev.java/learn/oop/)
 - [Records](https://dev.java/learn/records/)
 - [Generics](https://dev.java/learn/introducing-generics/)
-- *Effective Java*, главы 2–5: objects, общие методы, классы, generics — [содержание книги](https://www.pearson.com/en-us/subject-catalog/p/effective-java/P200000000138).
+- *Effective Java*, главы 2–5: objects, общие методы, классы,
+  generics — [содержание книги](https://www.pearson.com/en-us/subject-catalog/p/effective-java/P200000000138).
 
 ### Неделя 3. Collections, lambdas и Stream API
 
@@ -267,7 +276,10 @@
 - [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
 - [Полный Spring REST tutorial](https://spring.io/guides/tutorials/rest/)
 - *Spring Start Here*, главы 8 и 10
-- Видео/курс: [Spring Academy — Building a REST API](https://spring.academy/courses/building-a-rest-api-with-spring-boot) — 20 уроков и практические лабораторные.
+-
+
+Видео/курс: [Spring Academy — Building a REST API](https://spring.academy/courses/building-a-rest-api-with-spring-boot) —
+20 уроков и практические лабораторные.
 
 ### Неделя 8. Дизайн API
 
@@ -376,7 +388,8 @@
 - [Repository query keywords](https://docs.spring.io/spring-data/jpa/reference/repositories/query-keywords-reference.html)
 - *Spring Start Here*, глава 14.
 
-Если проект использует jOOQ или Spring Data JDBC, следует заменить JPA этой технологией. Не нужно учить ORM «на всякий случай».
+Если проект использует jOOQ или Spring Data JDBC, следует заменить JPA этой технологией. Не нужно учить ORM «на всякий
+случай».
 
 ### Неделя 12. Индексы и планы выполнения
 
@@ -399,7 +412,8 @@
 Материалы:
 
 - [PostgreSQL: Indexes](https://www.postgresql.org/docs/current/indexes.html)
-- Книга *Designing Data-Intensive Applications*, глава 1 и разделы о storage/indexing по мере необходимости — [второе издание](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/).
+- Книга *Designing Data-Intensive Applications*, глава 1 и разделы о storage/indexing по мере
+  необходимости — [второе издание](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/).
 
 **Результат месяца:** API работает с PostgreSQL, схема мигрируется автоматически, ключевые запросы проанализированы.
 
@@ -421,7 +435,9 @@
 - propagation;
 - ограничения `@Transactional`.
 
-Важно понимать, что Spring реализует declarative transactions через AOP proxy. Поэтому self-invocation и запуск нового потока могут нарушить ожидаемую семантику: [как работает `@Transactional`](https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/tx-decl-explained.html).
+Важно понимать, что Spring реализует declarative transactions через AOP proxy. Поэтому self-invocation и запуск нового
+потока могут нарушить ожидаемую семантику: [как работает
+`@Transactional`](https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/tx-decl-explained.html).
 
 Практика:
 
@@ -452,7 +468,8 @@
 - thread safety Spring singleton beans;
 - virtual threads — обзор, не глубокая оптимизация.
 
-Virtual threads стали финальной возможностью в Java 21 и полезны прежде всего при большом числе блокирующих I/O-задач, а не для CPU-bound вычислений: [официальное введение](https://dev.java/learn/new-features/virtual-threads/).
+Virtual threads стали финальной возможностью в Java 21 и полезны прежде всего при большом числе блокирующих I/O-задач, а
+не для CPU-bound вычислений: [официальное введение](https://dev.java/learn/new-features/virtual-threads/).
 
 Материалы:
 
@@ -651,7 +668,8 @@ Virtual threads стали финальной возможностью в Java 2
 - OpenTelemetry;
 - защита персональных и финансовых данных в логах.
 
-Spring рассматривает observability как сочетание logs, metrics и traces, а для метрик и tracing использует Micrometer: [Spring Boot Observability](https://docs.spring.io/spring-boot/reference/actuator/observability.html).
+Spring рассматривает observability как сочетание logs, metrics и traces, а для метрик и tracing использует
+Micrometer: [Spring Boot Observability](https://docs.spring.io/spring-boot/reference/actuator/observability.html).
 
 Практика:
 
@@ -778,4 +796,6 @@ Spring рассматривает observability как сочетание logs, 
 - внести миграцию без несовместимого изменения схемы;
 - собрать и запустить сервис из командной строки.
 
-Самая эффективная стратегия — уже с 6–8-й недели брать небольшие backend-задачи совместно с Java-разработчиком. Полгода самостоятельного обучения дадут базу, но именно review реального enterprise-кода быстрее всего сформирует правильные Spring- и Java-идиомы.
+Самая эффективная стратегия — уже с 6–8-й недели брать небольшие backend-задачи совместно с Java-разработчиком. Полгода
+самостоятельного обучения дадут базу, но именно review реального enterprise-кода быстрее всего сформирует правильные
+Spring- и Java-идиомы.
