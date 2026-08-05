@@ -177,6 +177,8 @@ System.out.println(count); // compile-time error
 
 ```java
 public final class Money {
+    private static final Money ZERO = new Money(BigDecimal.ZERO);
+
     private final BigDecimal amount;
 
     private Money(BigDecimal amount) {
@@ -184,7 +186,7 @@ public final class Money {
     }
 
     public static Money zero() {
-        return new Money(BigDecimal.ZERO);
+        return ZERO;
     }
 
     public static Money of(String amount) {
@@ -205,6 +207,93 @@ Money zero = Money.zero();
 - можно вернуть subtype;
 - можно скрыть детали создания;
 - не требуется создавать новый объект при каждом вызове.
+
+### Фабрика может вернуть cached instance
+
+`Cached instance` — это уже созданный объект, ссылку на который фабрика сохраняет и возвращает повторно. В примере
+выше объект с нулевой суммой создаётся только один раз при инициализации класса:
+
+```java
+Money first = Money.zero();
+Money second = Money.zero();
+
+System.out.println(first == second); // true: обе переменные ссылаются на один объект
+```
+
+Если бы `zero()` каждый раз выполнял `new Money(BigDecimal.ZERO)`, суммы внутри объектов были бы одинаковыми, но это
+были бы разные экземпляры. Кэширование позволяет не создавать множество эквивалентных объектов и иногда уменьшает
+расход памяти и нагрузку на garbage collector.
+
+Обычно переиспользуют объекты для часто встречающихся значений. Например, `Integer.valueOf(int)` может вернуть
+заранее созданный экземпляр для небольших чисел, а `Boolean.valueOf(boolean)` возвращает один из двух экземпляров:
+`Boolean.TRUE` или `Boolean.FALSE`.
+
+Кэшировать безопаснее всего immutable-объекты. Если вернуть нескольким клиентам один mutable-объект, изменение через
+одну ссылку неожиданно станет видно всем остальным клиентам:
+
+```java
+// Money immutable: amount нельзя изменить после создания объекта.
+Money zero = Money.zero(); // общий экземпляр безопасно использовать повторно
+```
+
+Клиент не должен полагаться на то, что фабрика всегда возвращает тот же объект, если это не является явно
+документированной частью контракта. Для сравнения значений value object обычно реализуют и используют `equals`, а
+`==` оставляют для проверки идентичности ссылок.
+
+### Фабрика может вернуть subtype
+
+`Subtype` — более конкретный тип, который реализует интерфейс или наследуется от класса. Возвращаемым типом фабрики
+может быть общий контракт, а фактический класс объекта фабрика выбирает по входным данным:
+
+```java
+interface PaymentProcessor {
+    void process(Money amount);
+}
+
+final class CardPaymentProcessor implements PaymentProcessor {
+    @Override
+    public void process(Money amount) {
+        System.out.println("Processing card payment");
+    }
+}
+
+final class FastPaymentProcessor implements PaymentProcessor {
+    @Override
+    public void process(Money amount) {
+        System.out.println("Processing fast payment");
+    }
+}
+
+public final class PaymentProcessors {
+    private PaymentProcessors() {
+    }
+
+    public static PaymentProcessor forMethod(String method) {
+        return switch (method) {
+            case "card" -> new CardPaymentProcessor();
+            case "fast" -> new FastPaymentProcessor();
+            default -> throw new IllegalArgumentException("Unsupported method: " + method);
+        };
+    }
+}
+```
+
+Клиент видит только `PaymentProcessor`, но во время выполнения получает один из его subtypes:
+
+```java
+PaymentProcessor processor = PaymentProcessors.forMethod("fast");
+processor.process(Money.of("10.50"));
+```
+
+Обычный конструктор `new CardPaymentProcessor()` всегда явно создаёт объект указанного класса. Фабрика же может:
+
+- скрыть конкретные классы от клиента;
+- выбирать реализацию по конфигурации или входным данным;
+- позднее заменить реализацию, не меняя клиентский код, пока сохраняется контракт `PaymentProcessor`.
+
+При этом клиент может вызывать только методы, объявленные в `PaymentProcessor`. Делать downcast до конкретной
+реализации обычно не следует: это разрушает преимущество общего контракта и связывает клиентский код с деталями
+фабрики.
 
 ---
 

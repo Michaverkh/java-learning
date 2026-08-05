@@ -621,7 +621,7 @@ package:
 ```
 
 Точные задачи и фазы разобраны в главе
-[Maven lifecycle](gradle-maven-lifecycle.md).
+[Maven lifecycle](maven-lifecycle.md).
 
 ## Типичные ошибки
 

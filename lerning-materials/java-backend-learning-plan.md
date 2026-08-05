@@ -73,8 +73,8 @@
 - [компиляция и запуск](week-01/compilation-and-running.md);
 - [структура Java-проекта](week-01/java-project-structure.md);
 - [пакеты и visibility](week-01/packages-and-visibility.md);
-- [Maven lifecycle](week-01/gradle-maven-lifecycle.md);
-- Maven dependency scopes;
+- [Maven lifecycle](week-01/maven-lifecycle.md);
+- [Maven dependency scopes](week-01/maven-dependency-scopes.md);
 
 Практика:
 
@@ -96,7 +96,7 @@
 
 Темы:
 
-- примитивы и reference types;
+- [примитивы и reference types](week-02/primitives-and-reference-types.md);
 - [объектная модель и ООП в Java: классы, объекты, конструкторы, инкапсуляция, наследование и полиморфизм](week-02/object-oriented-programming.md);
 - интерфейсы, `abstract`, `final`, `sealed`;
 - `record`, `enum`;
