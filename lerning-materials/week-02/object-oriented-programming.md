@@ -331,6 +331,66 @@ public void deposit(BigDecimal amount) {
 
 Обе записи эквивалентны, пока имя параметра или локальной переменной не перекрывает имя поля.
 
+### Что именно означает `this` в Java
+
+`this` — ссылка на текущий экземпляр класса: объект, относительно которого сейчас выполняется instance method,
+constructor или instance initializer. Например, при вызове:
+
+```java
+Account account = new Account("main");
+account.deposit(new BigDecimal("100.00"));
+```
+
+внутри `deposit` выражение `this` ссылается на тот же объект, что и переменная `account` в вызывающем коде. Упрощённо
+вызов можно мысленно читать так: «выполни `Account.deposit` для объекта `account`».
+
+У `this` есть несколько важных свойств:
+
+- ссылка предоставляется Java автоматически, её не объявляют как параметр;
+- внутри instance method `this` не может быть `null`: метод сначала должен быть вызван относительно существующего
+  объекта;
+- присвоить другое значение в `this` нельзя;
+- compile-time type выражения `this` — класс, внутри которого оно написано; runtime object при этом может быть его
+  subtype;
+- в static context текущего экземпляра нет, поэтому использовать `this` там нельзя.
+
+```java
+public class Account {
+    public static void printCurrent() {
+        System.out.println(this); // compile-time error
+    }
+}
+```
+
+`this` можно использовать не только для обращения к полям. Это обычная ссылка на объект, поэтому её можно передать в
+другой метод или вернуть:
+
+```java
+public final class Account {
+    private BigDecimal balance = BigDecimal.ZERO;
+
+    public Account deposit(BigDecimal amount) {
+        balance = balance.add(amount);
+        return this;
+    }
+
+    public void registerIn(AccountRegistry registry) {
+        registry.register(this);
+    }
+}
+```
+
+Возврат `this` позволяет строить цепочки вызовов:
+
+```java
+account
+        .deposit(new BigDecimal("100.00"))
+        .deposit(new BigDecimal("25.00"));
+```
+
+Такой fluent API удобен не всегда: он уместен, только если повторные вызовы читаются однозначно и ожидаемая mutability
+объекта очевидна.
+
 ### `this` устраняет неоднозначность
 
 ```java
@@ -345,6 +405,83 @@ public class Account {
 
 - `this.id` — поле объекта;
 - `id` — параметр конструктора.
+
+Если конфликта имён нет, квалификатор необязателен:
+
+```java
+public BigDecimal getBalance() {
+    return balance;      // то же самое, что this.balance
+}
+```
+
+Обычно `this.` явно пишут при перекрытии имени, а не добавляют механически перед каждым instance member.
+
+### Java `this` и JavaScript `this` — не одна и та же модель
+
+Главное различие: в Java значение `this` однозначно задаётся объектом, относительно которого вызван instance method.
+Java-код не может отделить метод от объекта и произвольно подменить его `this`.
+
+```java
+Account first = new Account("first");
+Account second = new Account("second");
+
+first.printId();  // this == first
+second.printId(); // this == second
+```
+
+У обычной функции JavaScript `this` в основном определяется **формой вызова**, а не местом объявления функции:
+
+```javascript
+"use strict";
+
+const first = {
+  id: "first",
+  printId() {
+    console.log(this.id);
+  },
+};
+
+const second = { id: "second" };
+const print = first.printId;
+
+first.printId();          // this === first
+print.call(second);       // this === second
+print();                  // this === undefined; обращение к this.id завершится ошибкой
+```
+
+То есть одна и та же JS-функция может получить разные значения `this`. Методы Java не являются function values:
+сохранить `first.printId` в переменную и затем вызвать его с `this == second` через аналог `call`, `apply` или `bind`
+нельзя. Method reference `first::printId` уже привязан к receiver `first` и не меняет его при вызове:
+
+```java
+Runnable print = first::printId;
+print.run(); // внутри printId this всё ещё ссылается на first
+```
+
+Отдельное правило JavaScript действует для arrow function: у неё нет собственного `this`, она захватывает его из
+внешнего lexical context. В Java такого разделения на «обычные методы» и «arrow methods» нет. `this` внутри instance
+method всегда означает текущий receiver, а внутри lambda expression сохраняет `this` окружающего объекта:
+
+```java
+public Runnable idPrinter() {
+    return () -> System.out.println(this.id);
+}
+```
+
+Здесь `this` — не объект лямбды, а экземпляр `Account`, на котором вызвали `idPrinter()`.
+
+| Ситуация                         | Java `this`                                                      | JavaScript `this` у обычной функции                           |
+|---                               |---                                                               |---                                                            |
+| Откуда берётся значение          | из receiver instance method или создаваемого объекта              | в основном из формы вызова                                    |
+| Можно ли подменить явно          | нет аналога `call`, `apply` или `bind`                            | да, через `call`, `apply` или `bind`                           |
+| Вызов отдельно от объекта        | метод не является самостоятельной функцией                        | возможен; в strict mode `this` будет `undefined`               |
+| `this` в static context          | отсутствует, обращение не компилируется                            | в static method класса обычно указывает на сам constructor     |
+| `this` в lambda / arrow function | означает `this` окружающего экземпляра                            | arrow function лексически захватывает внешний `this`           |
+| Может ли быть `null`/`undefined` | нет в выполняющемся instance method                               | может быть `undefined`; без strict mode возможен global object |
+
+Не следует переносить в Java привычку «потерять `this` при передаче callback». Для Java method reference вида
+`account::printId` receiver уже зафиксирован. Ближайшая практическая проблема в Java другая: передача `this` из
+constructor может опубликовать ещё не полностью инициализированный объект — этот случай разобран ниже.
 
 ### `static` принадлежит классу
 

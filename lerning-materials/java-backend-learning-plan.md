@@ -98,13 +98,8 @@
 
 - [примитивы и reference types](week-02/primitives-and-reference-types.md);
 - [объектная модель и ООП в Java: классы, объекты, конструкторы, инкапсуляция, наследование и полиморфизм](week-02/object-oriented-programming.md);
-- интерфейсы, `abstract`, `final`, `sealed`;
-- `record`, `enum`;
-- перегрузка и переопределение;
-- композиция против наследования;
-- `null`, `Optional`;
-- разница между Java generics и TypeScript generics;
-- type erasure.
+- [интерфейсы, `abstract`, `final`, `sealed`; `record` и `enum`; `null` и `Optional`; разница между Java generics и
+  TypeScript generics, type erasure](week-02/type-design-nullability-and-generics.md);
 - как работает память Хип, стэк, стринг пул где хранится и как достается Как связано с оперативной памятью
 - IntelliJ debugger.
 
