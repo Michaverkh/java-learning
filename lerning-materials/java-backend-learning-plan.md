@@ -70,6 +70,8 @@
 Темы:
 
 - [JDK, JVM, bytecode, classpath](week-01/jdk-jvm-bytecode-classpath.md);
+- память JVM: stack, heap, ссылки на объекты, время жизни объектов, сборка мусора и string pool; связь памяти JVM с
+  оперативной памятью процесса;
 - [компиляция и запуск](week-01/compilation-and-running.md);
 - [структура Java-проекта](week-01/java-project-structure.md);
 - [пакеты и visibility](week-01/packages-and-visibility.md);
@@ -98,10 +100,8 @@
 
 - [примитивы и reference types](week-02/primitives-and-reference-types.md);
 - [объектная модель и ООП в Java: классы, объекты, конструкторы, инкапсуляция, наследование и полиморфизм](week-02/object-oriented-programming.md);
-- [интерфейсы, `abstract`, `final`, `sealed`; `record` и `enum`; `null` и `Optional`; разница между Java generics и
-  TypeScript generics, type erasure](week-02/type-design-nullability-and-generics.md);
-- как работает память Хип, стэк, стринг пул где хранится и как достается Как связано с оперативной памятью
-- IntelliJ debugger.
+- [интерфейсы, `abstract`, `final`, `sealed`; `record` и `enum`; `null` и
+  `Optional`; разница между Java generics и TypeScript generics, type erasure](week-02/type-design-nullability-and-generics.md);
 
 Особое внимание:
 
@@ -130,27 +130,33 @@
 
 Темы:
 
-- `List`, `Set`, `Map`, `Queue`;
-- `ArrayList`, `HashMap`, `HashSet`;
-- mutable и immutable collections;
-- `Comparable` и `Comparator`;
-- functional interfaces;
-- method references;
-- Stream API: `map`, `filter`, `flatMap`, `reduce`, collectors;
-- когда обычный цикл понятнее stream.
+- [Collections Framework](week-03/collections-framework.md):
+  - интерфейсы `List`, `Set`, `Map`, `Queue` и выбор подходящей структуры данных;
+  - реализации `ArrayList`, `HashMap`, `HashSet`, `ArrayDeque` и основные оценки сложности их операций;
+  - связь контрактов `equals/hashCode` с работой `HashMap` и `HashSet`;
+  - изменяемые и неизменяемые коллекции, фабричные методы `of` и `copyOf`;
+  - естественный порядок через `Comparable` и настраиваемый порядок через `Comparator`;
+- [лямбда-выражения и функциональные интерфейсы](week-03/lambda-expressions-and-functional-interfaces.md):
+  - стандартные интерфейсы `Predicate`, `Function`, `Consumer`, `Supplier`, `UnaryOperator`;
+  - захват локальных переменных и требование `effectively final`;
+  - ссылки на методы;
+- Stream API и границы его применения:
+  - создание stream, ленивое выполнение и одноразовость;
+  - `map`, `filter`, `flatMap`, `reduce`, `collect` и стандартные `Collectors`;
+  - побочные эффекты и случаи, когда обычный цикл понятнее Stream API.
 
 Сопоставление с TypeScript:
 
 - Java Stream похож на цепочку методов массива, но ленивый и одноразовый;
-- `Optional` — не полный аналог `T | undefined`;
-- Java generics проверяются иначе из-за type erasure.
 
 Практика:
 
 - сгруппировать операции по счёту;
 - посчитать обороты и комиссии;
 - найти подозрительные операции;
-- реализовать один алгоритм через loop и stream, сравнить читаемость.
+- реализовать один алгоритм через обычный цикл и Stream API, сравнить читаемость;
+- исследовать в IntelliJ Debugger локальные переменные, ссылки на объекты и стек вызовов;
+- проследить выполнение цепочки Stream API с помощью точки останова и Evaluate Expression.
 
 Материалы:
 
