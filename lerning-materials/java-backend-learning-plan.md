@@ -140,7 +140,7 @@
   - стандартные интерфейсы `Predicate`, `Function`, `Consumer`, `Supplier`, `UnaryOperator`;
   - захват локальных переменных и требование `effectively final`;
   - ссылки на методы;
-- Stream API и границы его применения:
+- [Stream API и границы его применения](week-03/stream-api-and-its-boundaries.md):
   - создание stream, ленивое выполнение и одноразовость;
   - `map`, `filter`, `flatMap`, `reduce`, `collect` и стандартные `Collectors`;
   - побочные эффекты и случаи, когда обычный цикл понятнее Stream API.
