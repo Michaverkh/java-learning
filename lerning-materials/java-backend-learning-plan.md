@@ -70,8 +70,7 @@
 Темы:
 
 - [JDK, JVM, bytecode, classpath](week-01/jdk-jvm-bytecode-classpath.md);
-- память JVM: stack, heap, ссылки на объекты, время жизни объектов, сборка мусора и string pool; связь памяти JVM с
-  оперативной памятью процесса;
+- [память JVM: stack, heap, string pool и связь с оперативной памятью](week-01/jvm-memory-stack-heap-string-pool.md);
 - [компиляция и запуск](week-01/compilation-and-running.md);
 - [структура Java-проекта](week-01/java-project-structure.md);
 - [пакеты и visibility](week-01/packages-and-visibility.md);
@@ -168,15 +167,12 @@
 
 Темы:
 
-- checked и unchecked exceptions;
-- exception hierarchy;
-- `try-with-resources`;
-- создание domain exceptions;
-- stack traces;
-- `java.time`;
-- аннотации;
-- базовая reflection;
-- defensive copies.
+- [надёжные границы Java-кода: исключения, ресурсы, время, метаданные и защитные копии](week-04/reliable-boundaries-exceptions-resources-time-and-metadata.md):
+  - checked и unchecked exceptions, иерархия исключений и доменные исключения;
+  - `try-with-resources`, подавленные исключения, stack trace и сохранение причины ошибки;
+  - `java.time`: выбор типа, часовой пояс и детерминированное время через `Clock`;
+  - аннотации и базовая reflection: что существует во время выполнения и где заканчивается их уместность;
+  - защитные копии для массивов и изменяемых объектов.
 
 Практика:
 
@@ -201,14 +197,12 @@
 
 Темы:
 
-- inversion of control;
-- beans и application context;
-- constructor injection;
-- `@Component`, `@Service`, `@Repository`;
-- `@Configuration`, `@Bean`;
-- component scanning;
-- bean lifecycle и scopes;
-- почему Spring использует proxies/reflection.
+- [IoC, DI и Spring Context](week-05/ioc-di-spring-context.md):
+  - инверсия управления, dependency injection и constructor injection;
+  - beans, `ApplicationContext` и component scanning;
+  - `@Component`, `@Service`, `@Repository`, `@Configuration`, `@Bean`;
+  - жизненный цикл и области видимости beans;
+  - reflection, proxies и ограничение self-invocation.
 
 Практика:
 

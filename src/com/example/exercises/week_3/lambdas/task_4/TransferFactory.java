@@ -14,7 +14,7 @@ public final class TransferFactory {
         this.clock = clock;
     }
 
-    Transfer create(CreateTransferCommand command) {
+    Transfer create(TransferCommand command) {
         final UUID id = idGenerator.get();
         final TransferStatus status = TransferStatus.COMPLETED;
         final Instant completedAt = clock.instant();

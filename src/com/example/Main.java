@@ -1,36 +1,31 @@
 package com.example;
 
-import com.example.exercises.week_3.streamApi.task_2.AccountId;
-import com.example.exercises.week_3.streamApi.task_2.AccountTurnover;
-import com.example.exercises.week_3.streamApi.task_2.TurnoverCalculator;
-import com.example.exercises.week_3.streamApi.task_2.TurnoverCalculatorTestData;
+import com.example.wallet.transfers.TransferService;
+import com.example.wallet.accounts.InMemoryAccountRepository;
+import com.example.wallet.ledger.InMemoryLedgerRepository;
+import com.example.wallet.ledger.LedgerEntryFactory;
+import com.example.wallet.transfers.TransferFactory;
+import com.example.wallet.transfers.InMemoryTransferRepository;
 
-import java.util.Map;
+import java.time.Clock;
+import java.util.UUID;
+import java.util.function.Supplier;
 
 public class Main {
 
     public static void main(String[] args) {
-        TurnoverCalculatorTestData testData = TurnoverCalculatorTestData.create();
-        TurnoverCalculator calculator = new TurnoverCalculator();
+        Supplier<UUID> idGenerator = UUID::randomUUID;
+        Clock clock = Clock.systemUTC();
 
-        Map<AccountId, AccountTurnover> report = calculator.calculate(
-                testData.accountIds(),
-                testData.entries()
-        );
+        TransferFactory transferFactory = new TransferFactory(idGenerator, clock);
+        LedgerEntryFactory ledgerFactory = new LedgerEntryFactory(idGenerator, clock);
 
-        System.out.println("Обороты по счетам:");
-        printTurnover("A", report.get(testData.accountA()));
-        printTurnover("B", report.get(testData.accountB()));
-        printTurnover("C", report.get(testData.accountC()));
-    }
-
-    private static void printTurnover(String accountName, AccountTurnover turnover) {
-        System.out.printf(
-                "%s: incoming=%s, outgoing=%s, netChange=%s%n",
-                accountName,
-                turnover.incoming(),
-                turnover.outgoing(),
-                turnover.netChange()
+        TransferService transferService = new TransferService(
+                transferFactory,
+                ledgerFactory,
+                new InMemoryTransferRepository(),
+                new InMemoryAccountRepository(),
+                new InMemoryLedgerRepository()
         );
     }
 }

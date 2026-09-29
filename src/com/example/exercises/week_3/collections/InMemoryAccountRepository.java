@@ -15,21 +15,7 @@ public final class InMemoryAccountRepository {
         accountIdsByClient.computeIfAbsent(account.clientId(), ignored -> new HashSet<>()).add(account.id());
     }
 
-    // В этом случае поиск будет выполнен за O(accounts.values().lenght)
-    public List<Account> findAllByClientId(ClientId id) {
-        List<Account> result = new ArrayList<>();
-
-        for (Account account : accounts.values()) {
-            if (account.clientId().equals(id)) {
-                result.add(account);
-            }
-        }
-
-        return result;
-    }
-
-    // В этом случае поиск будет выполнен за O(k log k)
-    public List<Account> findAllByClientIdWithHelpOfSet(ClientId clientId) {
+    public List<Account> findAllByClientId(ClientId clientId) {
         Set<AccountId> accountIds =
                 accountIdsByClient.getOrDefault(clientId, Set.of());
 
