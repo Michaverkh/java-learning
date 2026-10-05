@@ -1,0 +1,7 @@
+wallet:
+  transfer:
+    max-amount: "100000.00"
+
+logging:
+  level:
+    com.example.wallet: DEBUG

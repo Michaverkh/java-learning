@@ -548,10 +548,10 @@ value object. Делать deep copy всего графа обычно доро
 
 ### Задание 1. Контракт импорта
 
-В пакете `src/com/example/exercises/week_4/relable_boundaries` реализуй
+В пакете `src/main/java/com/example/exercises/week_4/relable_boundaries` реализуй
 `OperationCsvImporter#importOperations(Path path): ImportReport`. Имя `import` использовать нельзя: это ключевое слово
 Java. Полная формулировка, формат CSV, пример файла и критерии готовности находятся в
-[README упражнения](../../src/com/example/exercises/week_4/relable_boundaries/README.md).
+[README упражнения](../../src/main/java/com/example/exercises/week_4/relable_boundaries/README.md).
 
 `ImportReport` должен отдельно хранить успешные `ImportedOperation` и ошибки строк. Каждая успешная операция содержит
 неизменяемый идентификатор, `Money`, `Instant occurredAt` и тип операции. Формат строк:

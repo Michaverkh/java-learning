@@ -1,0 +1,7 @@
+wallet:
+  transfer:
+    max-amount: "1000.00"
+
+logging:
+  level:
+    com.example.wallet: WARN

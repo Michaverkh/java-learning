@@ -216,7 +216,7 @@
 - [Содержание Spring Start Here](https://livebook.manning.com/book/spring-start-here/contents/)
 - [Spring Framework Core](https://docs.spring.io/spring-framework/reference/core.html)
 
-### Неделя 6. Spring Boot и конфигурация
+### [Неделя 6. Spring Boot и конфигурация](week-06/spring-boot-and-configuration.md)
 
 Темы:
 
@@ -242,7 +242,7 @@
 - [Building an Application with Spring Boot](https://spring.io/guides/gs/spring-boot/)
 - [Spring Boot reference](https://docs.spring.io/spring-boot/reference/)
 
-### Неделя 7. Spring MVC и REST
+### [Неделя 7. Spring MVC и REST](week-07/spring-mvc-and-rest.md)
 
 Темы:
 
