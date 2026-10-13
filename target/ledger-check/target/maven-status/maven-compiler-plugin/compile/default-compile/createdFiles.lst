@@ -1,0 +1,6 @@
+com\example\wallet\ledger\InMemoryLedgerRepository.class
+com\example\wallet\shared\pagination\PageResponse.class
+com\example\wallet\ledger\LedgerRepository.class
+com\example\wallet\accounts\AccountId.class
+com\example\wallet\ledger\LedgerEntry.class
+com\example\wallet\ledger\OperationType.class

@@ -1,1 +1,8 @@
+D:\my-projects\education\java-learning\src\test\java\com\example\wallet\accounts\AccountTest.java
+D:\my-projects\education\java-learning\src\test\java\com\example\wallet\accounts\api\AccountControllerTest.java
+D:\my-projects\education\java-learning\src\test\java\com\example\wallet\accounts\api\AccountHistoryControllerTest.java
+D:\my-projects\education\java-learning\src\test\java\com\example\wallet\api\filter\CorrelationIdFilterTest.java
+D:\my-projects\education\java-learning\src\test\java\com\example\wallet\clients\InMemoryClientRepositoryTest.java
+D:\my-projects\education\java-learning\src\test\java\com\example\wallet\ledger\InMemoryLedgerRepositoryTest.java
 D:\my-projects\education\java-learning\src\test\java\com\example\wallet\ledger\LedgerTest.java
+D:\my-projects\education\java-learning\src\test\java\com\example\wallet\transfers\api\TransferControllerTest.java

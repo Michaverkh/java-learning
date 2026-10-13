@@ -40,7 +40,7 @@ backend, чтобы поддерживать backend разработчиков 
 # Задания для практики:
 
 - При формировании заданий учитывай контекст технических требований pet проекта
-  `lerning-materials/projects/wallet-service/technical-requirements.md`
+  `src/main/java/com/example/wallet/technical-requirements.md`
 
 # Форматирование таблиц
 

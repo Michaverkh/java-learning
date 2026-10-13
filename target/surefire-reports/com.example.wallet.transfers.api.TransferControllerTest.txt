@@ -1,0 +1,167 @@
+-------------------------------------------------------------------------------
+Test set: com.example.wallet.transfers.api.TransferControllerTest
+-------------------------------------------------------------------------------
+Tests run: 40, Failures: 15, Errors: 0, Skipped: 0, Time elapsed: 0.667 s <<< FAILURE! -- in com.example.wallet.transfers.api.TransferControllerTest
+com.example.wallet.transfers.api.TransferControllerTest.nullAccountIdPreservesState(String)[1] -- Time elapsed: 0.019 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.nullAccountIdPreservesState(TransferControllerTest.java:204)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.nullAccountIdPreservesState(String)[2] -- Time elapsed: 0.014 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.nullAccountIdPreservesState(TransferControllerTest.java:204)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.tooLongDescriptionPreservesState -- Time elapsed: 0.017 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.tooLongDescriptionPreservesState(TransferControllerTest.java:218)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.nullCurrencyPreservesState -- Time elapsed: 0.016 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.nullCurrencyPreservesState(TransferControllerTest.java:211)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.multipleInvalidFieldsAreReturnedTogether -- Time elapsed: 0.013 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.errors.length()"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.multipleInvalidFieldsAreReturnedTogether(TransferControllerTest.java:349)
+Caused by: com.jayway.jsonpath.PathNotFoundException: Missing property in path $['errors']
+
+com.example.wallet.transfers.api.TransferControllerTest.invalidAmountIsRejectedBeforeController(String)[1] -- Time elapsed: 0.014 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.invalidAmountIsRejectedBeforeController(TransferControllerTest.java:189)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.invalidAmountIsRejectedBeforeController(String)[2] -- Time elapsed: 0.015 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.invalidAmountIsRejectedBeforeController(TransferControllerTest.java:189)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.invalidAmountIsRejectedBeforeController(String)[3] -- Time elapsed: 0.014 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.invalidAmountIsRejectedBeforeController(TransferControllerTest.java:189)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.invalidAmountIsRejectedBeforeController(String)[4] -- Time elapsed: 0.017 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.invalidAmountIsRejectedBeforeController(TransferControllerTest.java:189)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.invalidAmountIsRejectedBeforeController(String)[5] -- Time elapsed: 0.019 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.invalidAmountIsRejectedBeforeController(TransferControllerTest.java:189)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.absentRequiredFieldPreservesState(String)[1] -- Time elapsed: 0.014 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.absentRequiredFieldPreservesState(TransferControllerTest.java:198)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.absentRequiredFieldPreservesState(String)[2] -- Time elapsed: 0.014 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.absentRequiredFieldPreservesState(TransferControllerTest.java:198)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.absentRequiredFieldPreservesState(String)[3] -- Time elapsed: 0.016 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.absentRequiredFieldPreservesState(TransferControllerTest.java:198)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.absentRequiredFieldPreservesState(String)[4] -- Time elapsed: 0.015 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.absentRequiredFieldPreservesState(TransferControllerTest.java:198)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+com.example.wallet.transfers.api.TransferControllerTest.negativeAmountReturnsFieldAndReadableMessage -- Time elapsed: 0.015 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectError(TransferControllerTest.java:120)
+	at com.example.wallet.transfers.api.TransferControllerTest.expectMvcError(TransferControllerTest.java:95)
+	at com.example.wallet.transfers.api.TransferControllerTest.negativeAmountReturnsFieldAndReadableMessage(TransferControllerTest.java:336)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+

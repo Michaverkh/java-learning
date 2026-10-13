@@ -11,8 +11,8 @@ import java.util.UUID;
 
 /** Проверки без сторонних библиотек: запуск через main. */
 public final class LedgerTest {
-    private static final AccountId SOURCE = new AccountId("00000000-0000-0000-0000-000000000001");
-    private static final AccountId TARGET = new AccountId("00000000-0000-0000-0000-000000000002");
+    private static final AccountId SOURCE = new AccountId(UUID.fromString("00000000-0000-0000-0000-000000000001"));
+    private static final AccountId TARGET = new AccountId(UUID.fromString("00000000-0000-0000-0000-000000000002"));
     private static final UUID OPERATION_ID = new UUID(0, 10);
     private static final Instant NOW = Instant.parse("2026-09-29T10:00:00Z");
 
@@ -61,7 +61,7 @@ public final class LedgerTest {
         UUID unknown = new UUID(0, 99);
         check(repository.findById(unknown).isEmpty(), "unknown entry must be absent");
         check(repository.findAllByOperationId(unknown).isEmpty(), "unknown operation must be empty");
-        check(repository.findAllByAccountId(new AccountId(unknown.toString())).isEmpty(),
+        check(repository.findAllByAccountId(new AccountId(unknown)).isEmpty(),
                 "unknown account history must be empty");
 
         LedgerEntryFactory factory = new LedgerEntryFactory(() -> incoming.id(), Clock.fixed(NOW, ZoneOffset.UTC));

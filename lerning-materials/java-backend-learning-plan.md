@@ -40,7 +40,7 @@
 ## Сквозной проект
 
 В течение полугода необходимо разработать
-[`Wallet Service`](projects/wallet-service/technical-requirements.md) — упрощённый сервис кошельков:
+[`Wallet Service`](../src/main/java/com/example/wallet/technical-requirements.md) — упрощённый сервис кошельков:
 
 - клиенты и счета;
 - пополнение, списание и перевод;
@@ -130,19 +130,19 @@
 Темы:
 
 - [Collections Framework](week-03/collections-framework.md):
-  - интерфейсы `List`, `Set`, `Map`, `Queue` и выбор подходящей структуры данных;
-  - реализации `ArrayList`, `HashMap`, `HashSet`, `ArrayDeque` и основные оценки сложности их операций;
-  - связь контрактов `equals/hashCode` с работой `HashMap` и `HashSet`;
-  - изменяемые и неизменяемые коллекции, фабричные методы `of` и `copyOf`;
-  - естественный порядок через `Comparable` и настраиваемый порядок через `Comparator`;
+    - интерфейсы `List`, `Set`, `Map`, `Queue` и выбор подходящей структуры данных;
+    - реализации `ArrayList`, `HashMap`, `HashSet`, `ArrayDeque` и основные оценки сложности их операций;
+    - связь контрактов `equals/hashCode` с работой `HashMap` и `HashSet`;
+    - изменяемые и неизменяемые коллекции, фабричные методы `of` и `copyOf`;
+    - естественный порядок через `Comparable` и настраиваемый порядок через `Comparator`;
 - [лямбда-выражения и функциональные интерфейсы](week-03/lambda-expressions-and-functional-interfaces.md):
-  - стандартные интерфейсы `Predicate`, `Function`, `Consumer`, `Supplier`, `UnaryOperator`;
-  - захват локальных переменных и требование `effectively final`;
-  - ссылки на методы;
+    - стандартные интерфейсы `Predicate`, `Function`, `Consumer`, `Supplier`, `UnaryOperator`;
+    - захват локальных переменных и требование `effectively final`;
+    - ссылки на методы;
 - [Stream API и границы его применения](week-03/stream-api-and-its-boundaries.md):
-  - создание stream, ленивое выполнение и одноразовость;
-  - `map`, `filter`, `flatMap`, `reduce`, `collect` и стандартные `Collectors`;
-  - побочные эффекты и случаи, когда обычный цикл понятнее Stream API.
+    - создание stream, ленивое выполнение и одноразовость;
+    - `map`, `filter`, `flatMap`, `reduce`, `collect` и стандартные `Collectors`;
+    - побочные эффекты и случаи, когда обычный цикл понятнее Stream API.
 
 Сопоставление с TypeScript:
 
@@ -168,11 +168,11 @@
 Темы:
 
 - [надёжные границы Java-кода: исключения, ресурсы, время, метаданные и защитные копии](week-04/reliable-boundaries-exceptions-resources-time-and-metadata.md):
-  - checked и unchecked exceptions, иерархия исключений и доменные исключения;
-  - `try-with-resources`, подавленные исключения, stack trace и сохранение причины ошибки;
-  - `java.time`: выбор типа, часовой пояс и детерминированное время через `Clock`;
-  - аннотации и базовая reflection: что существует во время выполнения и где заканчивается их уместность;
-  - защитные копии для массивов и изменяемых объектов.
+    - checked и unchecked exceptions, иерархия исключений и доменные исключения;
+    - `try-with-resources`, подавленные исключения, stack trace и сохранение причины ошибки;
+    - `java.time`: выбор типа, часовой пояс и детерминированное время через `Clock`;
+    - аннотации и базовая reflection: что существует во время выполнения и где заканчивается их уместность;
+    - защитные копии для массивов и изменяемых объектов.
 
 Практика:
 
@@ -198,11 +198,11 @@
 Темы:
 
 - [IoC, DI и Spring Context](week-05/ioc-di-spring-context.md):
-  - инверсия управления, dependency injection и constructor injection;
-  - beans, `ApplicationContext` и component scanning;
-  - `@Component`, `@Service`, `@Repository`, `@Configuration`, `@Bean`;
-  - жизненный цикл и области видимости beans;
-  - reflection, proxies и ограничение self-invocation.
+    - инверсия управления, dependency injection и constructor injection;
+    - beans, `ApplicationContext` и component scanning;
+    - `@Component`, `@Service`, `@Repository`, `@Configuration`, `@Bean`;
+    - жизненный цикл и области видимости beans;
+    - reflection, proxies и ограничение self-invocation.
 
 Практика:
 
@@ -252,7 +252,7 @@
 - Jackson;
 - request parameters, path variables, body;
 - HTTP status codes;
-- validation;
+- [validation: проверка DTO и аргументов метода, различия исключений MVC](week-07/validation/mvc-validation-exceptions.md);
 - pagination;
 - error response;
 - `@ControllerAdvice`;
@@ -276,7 +276,7 @@
 Видео/курс: [Spring Academy — Building a REST API](https://spring.academy/courses/building-a-rest-api-with-spring-boot) —
 20 уроков и практические лабораторные.
 
-### Неделя 8. Дизайн API
+### [Неделя 8. Дизайн API](week-08/api-design.md)
 
 Темы:
 

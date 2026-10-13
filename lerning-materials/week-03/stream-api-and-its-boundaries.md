@@ -54,8 +54,8 @@ Java промежуточные операции задают отложенны
 ## 2. Модель данных для примеров
 
 Фрагменты ниже предполагают следующие объявления и переменную `List<LedgerEntry> entries`. Типы — учебная проекция
-из [требований Wallet Service](../projects/wallet-service/technical-requirements.md), а не новая обязательная реализация
-существующих классов проекта.
+из [требований Wallet Service](../../src/main/java/com/example/wallet/technical-requirements.md), а не новая
+обязательная реализация существующих классов проекта.
 
 ```java
 import java.math.BigDecimal;

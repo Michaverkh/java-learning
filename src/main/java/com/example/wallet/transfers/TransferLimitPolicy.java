@@ -1,6 +1,7 @@
 package com.example.wallet.transfers;
 
 import com.example.wallet.configuration.TransferProperties;
+import com.example.wallet.transfers.exceptions.TransferLimitExceededException;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -15,7 +16,7 @@ public final class TransferLimitPolicy {
 
     public void check(BigDecimal amount) {
         if (amount.compareTo(maxAmount) > 0) {
-            throw new IllegalArgumentException("transfer amount exceeds configured limit");
+            throw new TransferLimitExceededException();
         }
     }
 }

@@ -2,16 +2,25 @@ package com.example.wallet.transfers;
 
 import com.example.wallet.accounts.Account;
 import com.example.wallet.accounts.AccountRepository;
+import com.example.wallet.accounts.exceptions.AccountNotActiveException;
+import com.example.wallet.accounts.exceptions.AccountNotFoundException;
+import com.example.wallet.accounts.exceptions.InsufficientFundsException;
 import com.example.wallet.ledger.LedgerEntry;
 import com.example.wallet.ledger.LedgerEntryFactory;
 import com.example.wallet.ledger.LedgerRepository;
 import com.example.wallet.ledger.OperationType;
 import com.example.wallet.shared.money.Currency;
 import com.example.wallet.shared.money.Money;
+import com.example.wallet.transfers.exceptions.InvalidTransferException;
+import com.example.wallet.transfers.exceptions.SameAccountTransferException;
+import com.example.wallet.transfers.exceptions.TransferCreationException;
+import com.example.wallet.transfers.exceptions.TransferCurrencyMismatchException;
+import com.example.wallet.transfers.exceptions.TransferNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.Objects;
+import java.util.UUID;
 
 @Service
 public final class TransferService {
@@ -41,21 +50,33 @@ public final class TransferService {
         this.transferLimitPolicy = transferLimitPolicy;
     }
 
-    public void createTransfer(TransferCommand transferCommand) {
-        Objects.requireNonNull(transferCommand, "transferCommand must not be null");
+    public Transfer getTransferById(UUID transferId) {
+        return transferRepository.findById(transferId).orElseThrow(TransferNotFoundException::new);
+    }
 
-        BigDecimal amount = Objects.requireNonNull(
-                transferCommand.amount(),
-                "transfer amount must not be null"
-        );
+
+    public Transfer createTransfer(TransferCommand transferCommand) {
+        if (transferCommand == null) {
+            throw new InvalidTransferException("Параметры перевода обязательны");
+        }
+        if (transferCommand.sourceAccountId() == null || transferCommand.targetAccountId() == null) {
+            throw new InvalidTransferException("Идентификаторы обоих счетов обязательны");
+        }
+        if (transferCommand.currency() == null) {
+            throw new InvalidTransferException("Валюта перевода обязательна");
+        }
+        BigDecimal amount = transferCommand.amount();
+        if (amount == null) {
+            throw new InvalidTransferException("Сумма перевода обязательна");
+        }
 
         if (amount.signum() <= 0) {
-            throw new IllegalArgumentException("transfer amount must be positive");
+            throw new InvalidTransferException("Сумма перевода должна быть положительной");
         }
 
         if (amount.scale() > 2) {
-            throw new IllegalArgumentException(
-                    "transfer amount must have at most two decimal places"
+            throw new InvalidTransferException(
+                    "Сумма перевода должна содержать не более двух дробных знаков"
             );
         }
 
@@ -65,42 +86,42 @@ public final class TransferService {
                 transferCommand.sourceAccountId(),
                 transferCommand.targetAccountId()
         )) {
-            throw new IllegalArgumentException(
-                    "source and target accounts must be different"
-            );
+            throw new SameAccountTransferException();
         }
 
         Account sourceAccount = accountRepository
                 .findById(transferCommand.sourceAccountId())
-                .orElseThrow(() -> new IllegalArgumentException(
-                        "source account was not found"
+                .orElseThrow(() -> new AccountNotFoundException(
+                        transferCommand.sourceAccountId()
                 ));
         Account targetAccount = accountRepository
                 .findById(transferCommand.targetAccountId())
-                .orElseThrow(() -> new IllegalArgumentException(
-                        "target account was not found"
+                .orElseThrow(() -> new AccountNotFoundException(
+                        transferCommand.targetAccountId()
                 ));
 
-        if (!sourceAccount.getIsActive() || !targetAccount.getIsActive()) {
-            throw new IllegalStateException("both accounts must be active");
+        if (!sourceAccount.isActive() || !targetAccount.isActive()) {
+            throw new AccountNotActiveException();
         }
 
         if (sourceAccount.getBalance().getCurrency() != Currency.RUB
                 || targetAccount.getBalance().getCurrency() != Currency.RUB
                 || transferCommand.currency() != Currency.RUB) {
-            throw new IllegalArgumentException("only RUB transfers are supported");
+            throw new TransferCurrencyMismatchException();
         }
 
         BigDecimal sourceBalanceAfter = sourceAccount.getBalance().getAmount().subtract(amount);
 
         if (sourceBalanceAfter.signum() < 0) {
-            throw new IllegalStateException("insufficient funds");
+            throw new InsufficientFundsException();
         }
 
         BigDecimal targetBalanceAfter = targetAccount.getBalance().getAmount().add(amount);
 
         Transfer transfer = transferFactory.create(transferCommand);
-        Objects.requireNonNull(transfer.id(), "transfer id must not be null");
+        if (transfer.id() == null) {
+            throw new TransferCreationException("transfer id must not be null");
+        }
 
         Money transferAmount = new Money(transferCommand.currency(), amount);
 
@@ -114,13 +135,13 @@ public final class TransferService {
         );
 
         if (transferRepository.findById(transfer.id()).isPresent()) {
-            throw new IllegalStateException("transfer with this id already exists");
+            throw new TransferCreationException("transfer with this id already exists");
         }
 
         if (outgoingEntry.id().equals(incomingEntry.id())
                 || ledgerRepository.findById(outgoingEntry.id()).isPresent()
                 || ledgerRepository.findById(incomingEntry.id()).isPresent()) {
-            throw new IllegalStateException("ledger entry ids must be unique");
+            throw new TransferCreationException("ledger entry ids must be unique");
         }
 
         // Учебная версия: один поток и хранилища в памяти без сбоев записи.
@@ -130,5 +151,7 @@ public final class TransferService {
         transferRepository.save(transfer);
         ledgerRepository.save(outgoingEntry);
         ledgerRepository.save(incomingEntry);
+
+        return transfer;
     }
 }

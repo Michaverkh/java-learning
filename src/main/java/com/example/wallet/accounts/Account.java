@@ -1,21 +1,24 @@
 package com.example.wallet.accounts;
 
+import com.example.wallet.accounts.exceptions.AccountNotAllowCloseException;
+import com.example.wallet.accounts.exceptions.AccountNotAllowStatusChangeException;
 import com.example.wallet.clients.ClientId;
 import com.example.wallet.shared.money.Currency;
 import com.example.wallet.shared.money.Money;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Objects;
 
 public final class Account {
     private final AccountId accountId;
     private final ClientId clientId;
     private final Currency currency;
-    private boolean isActive;
-
+    private final Instant createdAt;
+    private AccountStatus status;
     private BigDecimal balance;
 
-    public Account(AccountId accountId, ClientId clientId, Money initialBalance) {
+    public Account(AccountId accountId, ClientId clientId, Money initialBalance, Instant createdAt) {
         this.accountId = Objects.requireNonNull(
                 accountId,
                 "accountId must not be null"
@@ -32,10 +35,12 @@ public final class Account {
 
         this.currency = initialBalance.getCurrency();
         this.balance = initialBalance.getAmount();
-        isActive = true;
+        this.createdAt = Objects.requireNonNull(createdAt, "createdAt must not be null");
+        this.status = AccountStatus.ACTIVE;
     }
 
     public void deposit(Money money) {
+        requireActive();
         requireSameCurrency(money);
         requirePositive(money);
 
@@ -43,6 +48,7 @@ public final class Account {
     }
 
     public void withdraw(Money money) {
+        requireActive();
         requireSameCurrency(money);
         requirePositive(money);
 
@@ -53,8 +59,29 @@ public final class Account {
         balance = balance.subtract(money.getAmount());
     }
 
-    public boolean getIsActive() {
-        return this.isActive;
+    public AccountStatus status() {
+        return this.status;
+    }
+
+    public boolean isActive() {
+        return status == AccountStatus.ACTIVE;
+    }
+
+    public void block() {
+        requireNotClosed();
+        status = AccountStatus.BLOCKED;
+    }
+
+    public void unblock() {
+        requireNotClosed();
+        status = AccountStatus.ACTIVE;
+    }
+
+    public void close() {
+        if (balance.signum() != 0) {
+            throw new AccountNotAllowCloseException(accountId);
+        }
+        status = AccountStatus.CLOSED;
     }
 
     public AccountId id() {
@@ -65,8 +92,24 @@ public final class Account {
         return this.clientId;
     }
 
+    public Instant createdAt() {
+        return this.createdAt;
+    }
+
     public Money getBalance() {
         return new Money(currency, balance);
+    }
+
+    private void requireActive() {
+        if (!isActive()) {
+            throw new IllegalStateException("account must be active");
+        }
+    }
+
+    private void requireNotClosed() {
+        if (status == AccountStatus.CLOSED) {
+            throw new AccountNotAllowStatusChangeException(accountId);
+        }
     }
 
     private void requireSameCurrency(Money money) {

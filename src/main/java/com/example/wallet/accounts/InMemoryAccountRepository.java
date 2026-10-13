@@ -18,6 +18,7 @@ public final class InMemoryAccountRepository implements AccountRepository {
     @Override
     public void save(Account account) {
         Objects.requireNonNull(account, "account must not be null");
+
         accounts.put(account.id(), account);
         accountIdsByClient.computeIfAbsent(account.clientId(), ignored -> new HashSet<>()).add(account.id());
     }

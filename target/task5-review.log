@@ -1,0 +1,132 @@
+Access is denied.
+13:46:24.405 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.3.Final
+13:46:24.813 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:24.815 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:24.818 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 2 ms
+13:46:25.093 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.094 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.094 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.143 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.143 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.143 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.167 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.167 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.167 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.184 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.184 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.184 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.212 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.212 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.213 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 1 ms
+13:46:25.228 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.228 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.229 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 1 ms
+13:46:25.245 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.245 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.245 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.263 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.263 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.263 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.293 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.293 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.293 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.313 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.313 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.314 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.359 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.360 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.360 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.482 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.482 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.482 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.557 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.557 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.557 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.591 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.591 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.591 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.612 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.612 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.613 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 1 ms
+13:46:25.647 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.647 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.648 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 1 ms
+13:46:25.669 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.669 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.670 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 1 ms
+13:46:25.706 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.706 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.706 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.726 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.727 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.727 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.745 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.746 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.746 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.764 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.764 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.764 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.783 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.783 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.783 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.801 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.801 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.801 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+13:46:25.818 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+13:46:25.819 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+13:46:25.819 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+[ERROR] Tests run: 14, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.502 s <<< FAILURE! -- in com.example.wallet.accounts.api.AccountHistoryControllerTest
+[ERROR] com.example.wallet.accounts.api.AccountHistoryControllerTest.responseExposesConversionAndConstraintErrors(String, String)[1] -- Time elapsed: 0.110 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.accounts.api.AccountHistoryControllerTest.responseExposesConversionAndConstraintErrors(AccountHistoryControllerTest.java:150)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+[ERROR] com.example.wallet.accounts.api.AccountHistoryControllerTest.responseExposesConversionAndConstraintErrors(String, String)[2] -- Time elapsed: 0.060 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.code"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.accounts.api.AccountHistoryControllerTest.responseExposesConversionAndConstraintErrors(AccountHistoryControllerTest.java:150)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['code']
+
+[ERROR] com.example.wallet.accounts.api.AccountHistoryControllerTest.unknownAccountReturns404 -- Time elapsed: 0.012 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<404> but was:<200>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:62)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:129)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$0(StatusResultMatchers.java:600)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.example.wallet.accounts.api.AccountHistoryControllerTest.unknownAccountReturns404(AccountHistoryControllerTest.java:68)
+
+[ERROR] Tests run: 13, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.040 s <<< FAILURE! -- in com.example.wallet.ledger.InMemoryLedgerRepositoryTest
+[ERROR] com.example.wallet.ledger.InMemoryLedgerRepositoryTest.pagesPreserveTimeAndIdOrderWithoutOverlap -- Time elapsed: 0.005 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[00000000-0000-0000-0000-000000000019, 00000000-0000-0000-0000-000000000018, 00000000-0000-0000-0000-000000000017, 00000000-0000-0000-0000-000000000016, 00000000-0000-0000-0000-000000000015, 00000000-0000-0000-0000-000000000014, 00000000-0000-0000-0000-000000000013, 00000000-0000-0000-0000-000000000012, 00000000-0000-0000-0000-000000000011, 00000000-0000-0000-0000-000000000010, 00000000-0000-0000-0000-00000000000f, 00000000-0000-0000-0000-00000000000e, 00000000-0000-0000-0000-00000000000d, 00000000-0000-0000-0000-00000000000c, 00000000-0000-0000-0000-00000000000b, 00000000-0000-0000-0000-00000000000a, 00000000-0000-0000-0000-000000000009, 00000000-0000-0000-0000-000000000008, 00000000-0000-0000-0000-000000000007, 00000000-0000-0000-0000-000000000006]> but was: <[00000000-0000-0000-0000-000000000018, 00000000-0000-0000-0000-000000000019, 00000000-0000-0000-0000-000000000016, 00000000-0000-0000-0000-000000000017, 00000000-0000-0000-0000-000000000014, 00000000-0000-0000-0000-000000000015, 00000000-0000-0000-0000-000000000012, 00000000-0000-0000-0000-000000000013, 00000000-0000-0000-0000-000000000010, 00000000-0000-0000-0000-000000000011, 00000000-0000-0000-0000-00000000000e, 00000000-0000-0000-0000-00000000000f, 00000000-0000-0000-0000-00000000000c, 00000000-0000-0000-0000-00000000000d, 00000000-0000-0000-0000-00000000000a, 00000000-0000-0000-0000-00000000000b, 00000000-0000-0000-0000-000000000008, 00000000-0000-0000-0000-000000000009, 00000000-0000-0000-0000-000000000006, 00000000-0000-0000-0000-000000000007]>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:184)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:179)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1188)
+	at com.example.wallet.ledger.InMemoryLedgerRepositoryTest.pagesPreserveTimeAndIdOrderWithoutOverlap(InMemoryLedgerRepositoryTest.java:71)
+
+[ERROR] Failures: 
+[ERROR]   AccountHistoryControllerTest.responseExposesConversionAndConstraintErrors:150 No value at JSON path "$.code"
+[ERROR]   AccountHistoryControllerTest.responseExposesConversionAndConstraintErrors:150 No value at JSON path "$.code"
+[ERROR]   AccountHistoryControllerTest.unknownAccountReturns404:68 Status expected:<404> but was:<200>
+[ERROR]   InMemoryLedgerRepositoryTest.pagesPreserveTimeAndIdOrderWithoutOverlap:71 expected: <[00000000-0000-0000-0000-000000000019, 00000000-0000-0000-0000-000000000018, 00000000-0000-0000-0000-000000000017, 00000000-0000-0000-0000-000000000016, 00000000-0000-0000-0000-000000000015, 00000000-0000-0000-0000-000000000014, 00000000-0000-0000-0000-000000000013, 00000000-0000-0000-0000-000000000012, 00000000-0000-0000-0000-000000000011, 00000000-0000-0000-0000-000000000010, 00000000-0000-0000-0000-00000000000f, 00000000-0000-0000-0000-00000000000e, 00000000-0000-0000-0000-00000000000d, 00000000-0000-0000-0000-00000000000c, 00000000-0000-0000-0000-00000000000b, 00000000-0000-0000-0000-00000000000a, 00000000-0000-0000-0000-000000000009, 00000000-0000-0000-0000-000000000008, 00000000-0000-0000-0000-000000000007, 00000000-0000-0000-0000-000000000006]> but was: <[00000000-0000-0000-0000-000000000018, 00000000-0000-0000-0000-000000000019, 00000000-0000-0000-0000-000000000016, 00000000-0000-0000-0000-000000000017, 00000000-0000-0000-0000-000000000014, 00000000-0000-0000-0000-000000000015, 00000000-0000-0000-0000-000000000012, 00000000-0000-0000-0000-000000000013, 00000000-0000-0000-0000-000000000010, 00000000-0000-0000-0000-000000000011, 00000000-0000-0000-0000-00000000000e, 00000000-0000-0000-0000-00000000000f, 00000000-0000-0000-0000-00000000000c, 00000000-0000-0000-0000-00000000000d, 00000000-0000-0000-0000-00000000000a, 00000000-0000-0000-0000-00000000000b, 00000000-0000-0000-0000-000000000008, 00000000-0000-0000-0000-000000000009, 00000000-0000-0000-0000-000000000006, 00000000-0000-0000-0000-000000000007]>
+[ERROR] Tests run: 38, Failures: 4, Errors: 0, Skipped: 0
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project java-learning: There are test failures.
+[ERROR] 
+[ERROR] See D:\my-projects\education\java-learning\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

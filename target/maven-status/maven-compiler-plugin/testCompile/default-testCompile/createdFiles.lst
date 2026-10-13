@@ -1,1 +1,7 @@
+com\example\wallet\transfers\api\TransferControllerTest$1.class
+com\example\wallet\ledger\InMemoryLedgerRepositoryTest.class
+com\example\wallet\accounts\api\AccountControllerTest.class
 com\example\wallet\ledger\LedgerTest.class
+com\example\wallet\accounts\AccountTest.class
+com\example\wallet\clients\InMemoryClientRepositoryTest.class
+com\example\wallet\transfers\api\TransferControllerTest.class

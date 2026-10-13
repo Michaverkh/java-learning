@@ -6,9 +6,9 @@ import java.util.UUID;
 public final class AccountId {
     private final UUID accountId;
 
-    public AccountId(String accountId) {
+    public AccountId(UUID accountId) {
         Objects.requireNonNull(accountId, "accountId must not be null");
-        this.accountId = UUID.fromString(accountId);
+        this.accountId = accountId;
     }
 
     public UUID getValue() {
