@@ -302,7 +302,7 @@
 
 ## Месяц 3. SQL, PostgreSQL и persistence
 
-### Неделя 9. Реляционная модель и SQL
+### [Неделя 9. Реляционная модель и SQL](week-09/relational-model-and-sql.md)
 
 Темы:
 
@@ -310,7 +310,7 @@
 - normal forms на практическом уровне;
 - joins;
 - aggregates;
-- window functions;
+- [window functions](week-09/relational-model-and-sql.md#windows): [подробный разбор `row_number()`](week-09/sql/row-number.md);
 - `NULL`;
 - DDL/DML;
 - связь между моделью API и моделью хранения.
@@ -326,7 +326,7 @@
 - [PostgreSQL Tutorial: главы 2–3](https://www.postgresql.org/docs/current/tutorial.html)
 - Интерактивная практика: [SQLBolt](https://sqlbolt.com/)
 
-### Неделя 10. JDBC, connection pool и migrations
+### [Неделя 10. JDBC, connection pool и migrations](week-10/jdbc-connection-pool-and-migrations.md)
 
 Темы:
 

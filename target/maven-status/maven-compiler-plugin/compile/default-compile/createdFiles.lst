@@ -26,6 +26,7 @@ com\example\exercises\week_2\premitivesAndReferenceTypes\UnicodeGame.class
 com\example\exercises\week_4\relable_boundaries\OperationType.class
 com\example\exercises\week_2\typeDesign\TransferResultMapper$1.class
 com\example\exercises\week_3\streamApi\task_4\LargeExpenseFinderTestData.class
+com\example\wallet\accounts\AccountBalanceReader.class
 com\example\exercises\week_2\typeDesign\optionalBoundary\InMemoryAccountRepository.class
 com\example\exercises\week_3\collections\OutboxEvent.class
 com\example\wallet\accounts\api\LedgerEntryResponse.class
@@ -55,6 +56,7 @@ com\example\exercises\week_2\typeDesign\TransferId.class
 com\example\exercises\week_3\collections\OperationType.class
 com\example\exercises\week_3\streamApi\task_4\OperationType.class
 com\example\exercises\week_2\typeDesign\optionalBoundary\AccountNotFoundException.class
+com\example\wallet\ledger\LedgerHistoryReader.class
 com\example\exercises\week_4\relable_boundaries\ImportIssue.class
 com\example\wallet\accounts\exceptions\AccountNotAllowStatusChangeException.class
 com\example\exercises\week_2\typeDesign\Money.class
@@ -114,12 +116,14 @@ com\example\wallet\api\error\ApiExceptionHandler.class
 com\example\exercises\week_3\lambdas\LedgerEntryFactory.class
 com\example\wallet\accounts\AccountRepository.class
 com\example\exercises\week_3\collections\OutboxEventType.class
+com\example\wallet\ledger\persistence\JdbcLedgerHistoryReader.class
 com\example\exercises\week_2\objectOrientedProgramming\entities\policy\NoFeePolicy.class
 com\example\exercises\week_2\premitivesAndReferenceTypes\ArraysComparasion.class
 com\example\exercises\week_3\collections\InMemoryAccountRepository.class
 com\example\wallet\accounts\InMemoryAccountRepository.class
 com\example\wallet\ledger\LedgerEntry.class
 com\example\wallet\ledger\OperationType.class
+com\example\wallet\accounts\persistence\JdbcAccountBalanceReader.class
 com\example\exercises\week_2\typeDesign\TransferResultMapper.class
 com\example\wallet\clients\Client.class
 com\example\exercises\week_3\collections\AccountId.class

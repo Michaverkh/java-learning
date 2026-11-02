@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 @Repository
-public final class InMemoryAccountRepository implements AccountRepository {
+public class InMemoryAccountRepository implements AccountRepository {
     private final Map<AccountId, Account> accounts = new HashMap<>();
     private final Map<ClientId, Set<AccountId>> accountIdsByClient = new HashMap<>();
 

@@ -6,11 +6,16 @@ import com.example.wallet.clients.ClientNotFoundException;
 import com.example.wallet.transfers.exceptions.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.net.URI;
@@ -18,6 +23,22 @@ import java.util.List;
 
 @RestControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(
+            MethodArgumentNotValidException exception,
+            HttpHeaders headers,
+            HttpStatusCode status,
+            WebRequest request
+    ) {
+        List<ValidationError> errors = exception.getBindingResult().getFieldErrors().stream()
+                .map(this::validationError)
+                .toList();
+        ProblemDetail problem = validationProblem(exception.getBody(), request, errors);
+        return ResponseEntity.status(status)
+                .contentType(MediaType.APPLICATION_PROBLEM_JSON)
+                .body(problem);
+    }
+
     @ExceptionHandler(ClientNotFoundException.class)
     public ResponseEntity<ProblemDetail> clientNotFound(
             ClientNotFoundException exception, HttpServletRequest request) {
@@ -119,5 +140,23 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(status)
                 .contentType(MediaType.APPLICATION_PROBLEM_JSON)
                 .body(problem);
+    }
+
+    private ValidationError validationError(FieldError error) {
+        return new ValidationError(error.getField(), error.getCode(), error.getDefaultMessage());
+    }
+
+    private ProblemDetail validationProblem(
+            ProblemDetail problem,
+            WebRequest request,
+            List<ValidationError> errors
+    ) {
+        problem.setType(URI.create("urn:wallet:problem:validation-error"));
+        problem.setTitle("Некорректный запрос");
+        problem.setProperty("code", "VALIDATION_ERROR");
+        problem.setProperty("correlationId", request.getAttribute(
+                CorrelationIdFilter.ATTRIBUTE_NAME, WebRequest.SCOPE_REQUEST));
+        problem.setProperty("errors", errors);
+        return problem;
     }
 }

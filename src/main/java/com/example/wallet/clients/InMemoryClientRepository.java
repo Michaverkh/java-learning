@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Repository
-public final class InMemoryClientRepository implements ClientRepository {
+public class InMemoryClientRepository implements ClientRepository {
     private final Map<ClientId, Client> clients = new HashMap<>();
 
     @Override

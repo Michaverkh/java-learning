@@ -8,7 +8,7 @@ import java.time.Instant;
 import java.util.*;
 
 @Repository
-public final class InMemoryLedgerRepository implements LedgerRepository {
+public class InMemoryLedgerRepository implements LedgerRepository {
     private final Map<UUID, LedgerEntry> entries = new HashMap<>();
 
     @Override

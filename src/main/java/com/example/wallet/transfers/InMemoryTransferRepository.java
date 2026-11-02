@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 @Repository
-public final class InMemoryTransferRepository implements TransferRepository {
+public class InMemoryTransferRepository implements TransferRepository {
     private final Map<UUID, Transfer> transfers = new HashMap<>();
 
     @Override

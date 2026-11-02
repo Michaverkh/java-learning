@@ -5,3 +5,12 @@ wallet:
 logging:
   level:
     com.example.wallet: DEBUG
+
+spring:
+  datasource:
+    url: ${WALLET_DB_URL:jdbc:postgresql://127.0.0.1:15432/wallet}
+    username: ${WALLET_DB_USERNAME:wallet_app}
+    password: ${WALLET_DB_PASSWORD}
+    hikari:
+      maximum-pool-size: 8
+      connection-timeout: 3000
