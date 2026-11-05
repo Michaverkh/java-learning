@@ -353,7 +353,7 @@
 - [Flyway documentation](https://documentation.red-gate.com/flyway)
 - *Spring Start Here*, глава 12.
 
-### Неделя 11. JPA/Hibernate или технология проекта
+### [Неделя 11. JPA/Hibernate или технология проекта](week-11/jpa-hibernate.md)
 
 Если команда использует JPA, изучить:
 

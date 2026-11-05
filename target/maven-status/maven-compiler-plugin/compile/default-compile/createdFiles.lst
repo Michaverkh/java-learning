@@ -23,6 +23,7 @@ com\example\exercises\week_3\lambdas\task_4\Transfer.class
 com\example\exercises\week_3\lambdas\task_4\TransferCommand.class
 com\example\wallet\api\filter\CorrelationIdFilter.class
 com\example\exercises\week_2\premitivesAndReferenceTypes\UnicodeGame.class
+com\example\wallet\transfers\entity\TransferEntity.class
 com\example\exercises\week_4\relable_boundaries\OperationType.class
 com\example\exercises\week_2\typeDesign\TransferResultMapper$1.class
 com\example\exercises\week_3\streamApi\task_4\LargeExpenseFinderTestData.class
@@ -147,6 +148,7 @@ com\example\wallet\clients\ClientStatus.class
 com\example\exercises\week_3\streamApi\task_2\TurnoverCalculator.class
 com\example\exercises\week_4\relable_boundaries\ImportReport.class
 com\example\wallet\accounts\exceptions\AccountNotAllowCloseException.class
+com\example\wallet\accounts\entity\AccountEntity.class
 com\example\exercises\week_3\streamApi\task_3\LedgerEntry.class
 com\example\wallet\accounts\api\AccountMapper.class
 com\example\wallet\accounts\AccountId.class

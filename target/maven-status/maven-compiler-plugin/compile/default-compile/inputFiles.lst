@@ -102,6 +102,7 @@ D:\my-projects\education\java-learning\src\main\java\com\example\wallet\accounts
 D:\my-projects\education\java-learning\src\main\java\com\example\wallet\accounts\api\HistoryRequest.java
 D:\my-projects\education\java-learning\src\main\java\com\example\wallet\accounts\api\LedgerEntryMapper.java
 D:\my-projects\education\java-learning\src\main\java\com\example\wallet\accounts\api\LedgerEntryResponse.java
+D:\my-projects\education\java-learning\src\main\java\com\example\wallet\accounts\entity\AccountEntity.java
 D:\my-projects\education\java-learning\src\main\java\com\example\wallet\accounts\exceptions\AccountNotActiveException.java
 D:\my-projects\education\java-learning\src\main\java\com\example\wallet\accounts\exceptions\AccountNotAllowCloseException.java
 D:\my-projects\education\java-learning\src\main\java\com\example\wallet\accounts\exceptions\AccountNotAllowStatusChangeException.java
@@ -137,6 +138,7 @@ D:\my-projects\education\java-learning\src\main\java\com\example\wallet\transfer
 D:\my-projects\education\java-learning\src\main\java\com\example\wallet\transfers\api\TransferController.java
 D:\my-projects\education\java-learning\src\main\java\com\example\wallet\transfers\api\TransferMapper.java
 D:\my-projects\education\java-learning\src\main\java\com\example\wallet\transfers\api\TransferResponse.java
+D:\my-projects\education\java-learning\src\main\java\com\example\wallet\transfers\entity\TransferEntity.java
 D:\my-projects\education\java-learning\src\main\java\com\example\wallet\transfers\exceptions\InvalidTransferException.java
 D:\my-projects\education\java-learning\src\main\java\com\example\wallet\transfers\exceptions\SameAccountTransferException.java
 D:\my-projects\education\java-learning\src\main\java\com\example\wallet\transfers\exceptions\TransferCreationException.java
